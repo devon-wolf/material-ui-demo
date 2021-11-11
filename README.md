@@ -1,8 +1,11 @@
 # material-ui-demo
-
+## Getting Started
 1. Spin up a new project:
-    - `npx create-react-app your-app-name --template typescript`
-    - or whatever project bootstrap you like, as long as the end result is a React project; end after `your-app-name` to use JS instead of TS
+    - JavaScript:
+        - `npx create-react-app your-app-name`
+    - Typescript:
+        - `npx create-react-app your-app-name --template typescript`
+    - or whatever project bootstrap you like, as long as the end result is a React project
     - [docs](https://create-react-app.dev/docs/getting-started/)
 2. Install Material UI
     - `cd` into `your-app-name`, and when there:
@@ -16,3 +19,9 @@
 4. Run the project!
     - `npm run start`
     - If your project does not start up in your browser automatically, navigate manually to whatever `localhost` port it's set to. `create-react-app` projects will go to `localhost:3000` unless that's already in use.
+
+Those are the only required steps! From here on we're coding in a playground.
+
+---
+
+## Using Material UI Components
