@@ -1,17 +1,20 @@
 import React from "react";
 import "./App.css";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, CssBaseline, Grid, Typography } from "@mui/material";
 
 function App(): JSX.Element {
   return (
-    <Grid container textAlign="center" border="solid 2px purple">
+    <>
+    <CssBaseline />
+    <Grid container textAlign="center" className="App">
       <Grid item xs={12}>
         <Typography variant="h1">Welcome to Material UI</Typography>
       </Grid>
       <Grid item xs={12}>
-        <Button>Get Started</Button>
+        <Button variant="contained">Get Started</Button>
       </Grid>
     </Grid>
+    </>
   );
 }
 

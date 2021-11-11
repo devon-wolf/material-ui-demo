@@ -31,3 +31,27 @@ I typically remove the unused logo assets in `src` and `public` after I start me
 ---
 
 ## Using Material UI Components
+
+You can get started using Material UI without doing any other setup, but there are [some steps you should take](https://mui.com/getting-started/usage/) to get the most out of it.
+- Add responsive meta tag
+    - in `public/index.html`, replace the existing viewport tag in the `<head>` with `<meta name="viewport" content="initial-scale=1, width=device-width" />`
+    - this provides better rendering support across different-sized devices
+- Add the CSS baseline component
+    - in `App.tsx` (or `.jsx` or `.js`), wrap the app in a fragment and add the [baseline component](https://mui.com/components/css-baseline/):
+    ```js
+    // ... other imports
+    import CssBaseline from '@mui/material/CssBaseline';
+
+    // ...start of component
+    <>
+        <CssBaseline />
+        {/* actual app stuff */}
+    </>
+    ```
+    - your import may look a little different depending on context, but that's the gist
+    - this provides style normalizations throughout the app
+- Add Roboto font
+    - MUI is built with the Roboto font in mind, but it's not included by default; if you'd like to use it, add `<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>` to the `<head>` in `public/index.html`
