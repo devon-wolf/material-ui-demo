@@ -55,3 +55,4 @@ You can get started using Material UI without doing any other setup, but there a
   rel="stylesheet"
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 />` to the `<head>` in `public/index.html`
+    - [docs](https://mui.com/components/typography/)
