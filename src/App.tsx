@@ -1,20 +1,23 @@
-import React from "react";
-import "./App.css";
-import { Button, CssBaseline, Grid, Typography } from "@mui/material";
+import React, { useState } from "react";
+import Layout from "./layout/Layout";
+import Calculator from "./pages/Calculator";
+import WelcomePage from "./pages/WelcomePage";
 
 function App(): JSX.Element {
+  const [isWelcomePage, setIsWelcomePage] = useState(true);
+
+  const handleStartClick = () => {
+    setIsWelcomePage(false);
+  };
+
   return (
-    <>
-    <CssBaseline />
-    <Grid container textAlign="center" className="App">
-      <Grid item xs={12}>
-        <Typography variant="h1">Welcome to Material UI</Typography>
-      </Grid>
-      <Grid item xs={12}>
-        <Button variant="contained">Get Started</Button>
-      </Grid>
-    </Grid>
-    </>
+    <Layout>
+      {isWelcomePage ? (
+        <WelcomePage {...{ handleStartClick }} />
+      ) : (
+        <Calculator />
+      )}
+    </Layout>
   );
 }
 

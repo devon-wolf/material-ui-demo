@@ -10,6 +10,7 @@
 2. Install Material UI
     - `cd` into `your-app-name`, and when there:
     - `npm i @mui/material`
+    - if you want icons, which you probably do, `npm i @mui/material @mui/icons-material`
     - [docs](https://mui.com)
     - I had dependency problems when starting to use MUI components with just this package installed. Based on the errors, I also installed these two libraries that provide additional styling tools:
         - `npm i @emotion/react @emotion/styled`
