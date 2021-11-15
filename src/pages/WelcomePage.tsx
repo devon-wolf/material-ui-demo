@@ -1,5 +1,5 @@
-import React from "react";
-import { Button, Grid, Typography } from "@mui/material";
+import React from 'react';
+import { Button, Grid, Typography } from '@mui/material';
 
 export interface WelcomePageProps {
   handleStartClick: () => void;

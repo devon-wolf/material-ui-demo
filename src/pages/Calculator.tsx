@@ -7,26 +7,26 @@ import {
   TextField,
   Toolbar,
   Typography,
-} from "@mui/material";
-import React, { ChangeEvent, useState } from "react";
-import { Box } from "@mui/system";
-import { chickenGifs } from "../data/chickenGifs";
+} from '@mui/material';
+import React, { ChangeEvent, useState } from 'react';
+import { Box } from '@mui/system';
+import { chickenGifs } from '../data/chickenGifs';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CalculatorProps {}
 
 const Calculator = (): JSX.Element => {
-  const [lengthInput, setLengthInput] = useState("0");
+  const [lengthInput, setLengthInput] = useState('0');
   const handleLengthChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setLengthInput(e.target.value);
   };
 
-  const [widthInput, setWidthInput] = useState("0");
+  const [widthInput, setWidthInput] = useState('0');
   const handleWidthChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setWidthInput(e.target.value);
   };
 
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
 
   const setChickenGif = () => {
@@ -72,7 +72,7 @@ const Calculator = (): JSX.Element => {
               value={lengthInput}
               onChange={handleLengthChange}
               helperText="Length in feet"
-              sx={{ margin: "1rem" }}
+              sx={{ margin: '1rem' }}
             />
             <TextField
               label="Width"
@@ -80,13 +80,13 @@ const Calculator = (): JSX.Element => {
               value={widthInput}
               onChange={handleWidthChange}
               helperText="Width in feet"
-              sx={{ margin: "1rem" }}
+              sx={{ margin: '1rem' }}
             />
             <Button onClick={setChickenGif}>Calculate Lumber</Button>
           </FormControl>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Box sx={{ textAlign: "center", maxWidth: "100%" }}>
+          <Box sx={{ textAlign: 'center', maxWidth: '100%' }}>
             {loading ? (
               <CircularProgress />
             ) : (
@@ -94,7 +94,7 @@ const Calculator = (): JSX.Element => {
                 <img
                   src={result}
                   alt="chicken dance gif"
-                  style={{ width: "100%" }}
+                  style={{ width: '100%' }}
                 />
               )
             )}
