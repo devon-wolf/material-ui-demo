@@ -1,15 +1,2 @@
-.layout, .centeredBox {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.fillWidth {
-  width: 100%;
-}
-
-img {
-  border-radius: 10px;
+.layout {
 }
