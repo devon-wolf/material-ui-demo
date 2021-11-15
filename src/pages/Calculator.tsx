@@ -1,19 +1,20 @@
 import {
   AppBar,
   Button,
+  CircularProgress,
   FormControl,
   Grid,
-  IconButton,
   TextField,
   Toolbar,
   Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import React, { ChangeEvent, useState } from "react";
-import { Box, width } from "@mui/system";
+import { Box } from "@mui/system";
+import { chickenGifs } from "../data/chickenGifs";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CalculatorProps {}
+
 const Calculator = (): JSX.Element => {
   const [lengthInput, setLengthInput] = useState("0");
   const handleLengthChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -25,27 +26,20 @@ const Calculator = (): JSX.Element => {
     setWidthInput(e.target.value);
   };
 
-  const handleMenuClick = () =>
-    console.log(
-      "I do not yet know what this menu button should do, I just put it here to look ~professional~"
-    );
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleCalculate = () => {
-    console.log("WIDTH: ", widthInput, "LENGTH: ", lengthInput, "RESULT: ???");
+  const setChickenGif = () => {
+    setLoading(true);
+    const randomIndex = Math.floor(Math.random() * chickenGifs.length);
+    setResult(chickenGifs[randomIndex].url);
+    setTimeout(() => setLoading(false), 1500);
   };
-  
+
   return (
     <Box height="100%">
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            color="inherit"
-            edge="start"
-            size="large"
-            onClick={handleMenuClick}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h4">Chicken Coop Calculator</Typography>
         </Toolbar>
       </AppBar>
@@ -66,7 +60,7 @@ const Calculator = (): JSX.Element => {
             is not an actionable section, it is just for information.
           </Typography>
         </Grid>
-        <Grid item xs={12} textAlign="center">
+        <Grid item xs={12} md={6} textAlign="center">
           <FormControl>
             <Typography variant="h5">
               I Want My Chicken Coop to Be...
@@ -88,8 +82,23 @@ const Calculator = (): JSX.Element => {
               helperText="Width in feet"
               sx={{ margin: "1rem" }}
             />
-            <Button onClick={handleCalculate}>Calculate Lumber</Button>
+            <Button onClick={setChickenGif}>Calculate Lumber</Button>
           </FormControl>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Box sx={{ textAlign: "center", maxWidth: "100%" }}>
+            {loading ? (
+              <CircularProgress />
+            ) : (
+              result && (
+                <img
+                  src={result}
+                  alt="chicken dance gif"
+                  style={{ width: "100%" }}
+                />
+              )
+            )}
+          </Box>
         </Grid>
       </Grid>
     </Box>
