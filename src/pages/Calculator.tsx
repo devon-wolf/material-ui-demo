@@ -4,6 +4,7 @@ import {
   CircularProgress,
   FormControl,
   Grid,
+  Icon,
   TextField,
   Toolbar,
   Typography,
@@ -38,6 +39,7 @@ const Calculator = (): JSX.Element => {
       <AppBar position="sticky">
         <Toolbar>
           <Typography variant="h4">Chicken Coop Calculator</Typography>
+          <Icon>🐔</Icon>
         </Toolbar>
       </AppBar>
 
