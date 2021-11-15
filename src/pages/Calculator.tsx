@@ -12,9 +12,6 @@ import React, { ChangeEvent, useState } from 'react';
 import { Box } from '@mui/system';
 import { chickenGifs } from '../data/chickenGifs';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface CalculatorProps {}
-
 const Calculator = (): JSX.Element => {
   const [lengthInput, setLengthInput] = useState('0');
   const handleLengthChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -92,7 +89,7 @@ const Calculator = (): JSX.Element => {
           </FormControl>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Box className="centeredBox">
+          <Box className="centeredBox fillWidth">
             {loading ? (
               <CircularProgress />
             ) : (
@@ -100,7 +97,7 @@ const Calculator = (): JSX.Element => {
                 <img
                   src={result}
                   alt="chicken dance gif"
-                  style={{ width: '100%' }}
+                  className="fillWidth"
                 />
               )
             )}
