@@ -38,13 +38,13 @@ const Calculator = (): JSX.Element => {
 
   return (
     <Box height="100%">
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <Typography variant="h4">Chicken Coop Calculator</Typography>
         </Toolbar>
       </AppBar>
 
-      <Grid container padding={2} spacing={2}>
+      <Grid container padding={2} spacing={2} rowSpacing={4}>
         <Grid item xs={12} md={6}>
           <Typography variant="h6">What To Do Here</Typography>
           <Typography>
@@ -60,7 +60,7 @@ const Calculator = (): JSX.Element => {
             is not an actionable section, it is just for information.
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6} textAlign="center">
+        <Grid item xs={12} sm={6} textAlign="center">
           <FormControl>
             <Typography variant="h5">
               I Want My Chicken Coop to Be...
@@ -82,11 +82,17 @@ const Calculator = (): JSX.Element => {
               helperText="Width in feet"
               sx={{ margin: '1rem' }}
             />
-            <Button onClick={setChickenGif}>Calculate Lumber</Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={setChickenGif}
+            >
+              Calculate Lumber
+            </Button>
           </FormControl>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Box sx={{ textAlign: 'center', maxWidth: '100%' }}>
+        <Grid item xs={12} sm={6}>
+          <Box className="centeredBox">
             {loading ? (
               <CircularProgress />
             ) : (
